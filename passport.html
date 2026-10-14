@@ -46,11 +46,23 @@
         </td>
     </tr>
   </table>
-    
-  <h2>данные из DOM</h2>
-  <img src>
+  <button class="button" id="change"; style="background:tomato">на латиницу</button>
+ <script>
+   const change = document.getElementById("change")
+   change.addEventListener("click", change_all)
 
-<button class="button" id="change"> Заменить </button>
+   function change_all(){
+     if(document.getElementsByTagName("div")[0].innerHTML==="Сергеева") {
+         document.getElementsByTagName("div")[0].innerHTML = "Sergeeva"
+         document.getElementsByTagName("div")[1].innerHTML = "Natalia"
+     }
+     else{
+         document.getElementsByTagName("div")[0].innerHTML="Сергеева"
+         document.getElementsByTagName("div")[1].innerHTML="Наталья"
+     }
+   }
+    </script>
+ 
 
 </body>
 <script src = "./scripts/pass.js"> </script>
