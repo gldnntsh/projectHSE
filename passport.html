@@ -11,26 +11,40 @@
         a.active {
          background-color: pink;
         }
-      body {
-        margin: 0;
-        padding: 20px
-      }
      </style>
   </head>
-<body>
-  <h1 style="center">считываем данные</h1>
-  
-  <h2>страница  паспорта</h2>
-  
-  <p>фамилия: <span>Сергеева</span></p>
-  <p>имя: <span>Наталья</span></p>
-  <p>год рождения: <span>2006</span></p>
+<body style="padding:20px; margin:0";>
+  <h2 style="align:center;">страница  паспорта</h2>
+  <table style="width: 700px; margin: 0 auto; border: 2px solid black; border-collapse: collapse;">
+    <!-- вторая страница-->
+    <tr style="height: 200px;">
+        <td style="padding: 25px 35px;">
+            <p>Кем выдан:</p> ГУ МВД ПО Г. МОСКВЕ<br>
+            <p>Дата выдачи:</p> 01.01.2024</td>
+    </tr>
+    <tr>
+        <td style="border-top: 2px solid black;"></td>
+    </tr>
+    <!-- третья страница паспорта -->
+    <tr style="height: 200px;">
+        <td style="padding: 25px 35px;">
+            <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
+                <tr>
+                    <!-- фото -->
+                    <td>
+                        <img src="images/passport.jpg" style="width: 120px; height: 160px; object-fit: cover;">
+                    </td>
+                    <!-- ФИО -->
+                    <td>
+                        <p>Фамилия:</p> Сергеева<br>
+                        <p>Имя:</> Наталья<br>
+                        <p>Отчество:</p> Валерьевна<br>
+                        <p>Пол:</p> Жен <br>
+                        <p>Дата рождения:</p> 01.01.2000</td>
+               </tr>
+            </table>
 
-  <h2>страница 3 паспорта</h2>
-  
-  <p>кем выдан: <span>ОВД г. Коломны</span></p>
-  <p>дата выдачи: <span>20.01.2020</span></p>
-
+          
   <h2>данные из DOM</h2>
   <img src>
 
