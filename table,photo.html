@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>таблица и фото</title>
     <style>
+       body {
+            background-image: url('images/cityphoto.jpg');
+            background-size: 1366px 768px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+        }
        th, td {
             border: 2px solid red;
             padding:10px;
@@ -41,14 +48,14 @@
         <caption align=center>таблица</caption>
             <!-- row one -->
             <tr style="height:100px">
-              <td> <img src="images/cityphoto1.jpg" height="50" alt="" style="display: block; margin-left: auto;"><br>
+              <td style="text-align: center"> <img src="images/cityphoto1.jpg" height="50" alt="" style="display: block; margin-left: auto;"><br>
               подпись </td>
               <td></td>
               <td style="width:200px; background-image: url('images/cityphoto2.jpg')"> </td>
             </tr> 
             <!-- row two -->
             <tr style="height:20px">
-                <td colspan=3></td>
+                <td colspan="3"></td>
             </tr>
             <!-- row three-->
             <tr>
@@ -74,3 +81,4 @@
         </table>
         
 </body>
+</html>
