@@ -19,7 +19,7 @@
             background-position: center;
             border-spacing: 15px;
             border-collapse: separate;
-            width=600px;
+            width:600px;
             margin: 0 auto;
         }
      </style>    
@@ -37,13 +37,40 @@
              <li>беларусь</li>
         </ul>
         <hr>
-        <caption align=center>таблица</caption>
         <table>
-          <tr style="heigh:100px">
+        <caption align=center>таблица</caption>
+            <!-- row one -->
+            <tr style="height:100px">
               <td> <img src="image/cityphoto1.jpg" height="50" alt="" style="display: block; margin-left: auto;"><br>
-            gодпись </td>
+              подпись </td>
               <td></td>
-              <td>
+              <td style="width:200px; background-image: url('image/cityphoto2.jpg')"> </td>
+            </tr> 
+            <!-- row two -->
+            <tr style="height:20px">
+                <td colspan=3></td>
+            </tr>
+            <!-- row three-->
+            <tr>
+                <td style="width: 400px; height: 300px"> ячейка 400 на 300</td>
+                <td style="background-color:green"> зеленый </td>
+            </tr>
+            <!--row four -->
+            <tr>
+                <td style="width: 50%">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td><img src="image/cityphoto3.jpg" width="60" alt=""></td>
+                            <td>ячейка</td>
+                        </tr>
+                        <tr>
+                            <td>ячейка</td>
+                            <td>ячейка</td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 50%; text-align: right;"><img src="image/cityphoto4.jpg" width="60" alt=""></td>
+            </tr>                 
         </table>
         
 </body>
