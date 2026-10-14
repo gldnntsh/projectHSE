@@ -4,6 +4,44 @@
     <meta charset="UTF-8">
     <title>таблица и фото</title>
     <style>
-       table {}
-          
+       table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+       }
+        th {
+            text-align: left;
+        }
+     </style>    
 </head>
+<body>
+        <h2> список мест для посещения</h2>
+        <ul style="list-style-type:square;">
+             <li>китай</li>
+             <li>мьянма</li>
+             <li>сша</li>
+                 <ul style="list-style-type:circle";>
+                    <li>Нью-Йорк</li>
+                    <li>Вашингтон</li>
+                 </ul>
+             <li>беларусь</li>
+        </ul>
+        
+        <h2 align=center> таблица1</h2>
+        <caption>кто какие страны посетил</caption>
+        <table style="width:100%">
+          <tr>
+            <th>Имя</th>
+            <th colspan="2">посещенные страны</th>
+          </tr>
+          <tr>
+             <td>наташа</td>
+             <td>китай</td>
+             <td>япония</td>
+          </tr>
+          <tr>
+             <td>игорь </td>
+             <td>франция </td>
+             <td>италия</td>
+        </table>
+        <hr>
+</body>
