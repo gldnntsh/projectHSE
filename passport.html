@@ -46,7 +46,7 @@
         </td>
     </tr>
   </table>
-  <button class="button" id="change"; style="background:tomato">на латиницу</button>
+  <button class="button" id="change" style="text-align:center"; style="background:tomato">на латиницу</button>
  <script>
    const change = document.getElementById("change")
    change.addEventListener("click", change_all)
@@ -55,6 +55,7 @@
      if(document.getElementsByTagName("div")[0].innerHTML==="Сергеева") {
          document.getElementsByTagName("div")[0].innerHTML = "Sergeeva"
          document.getElementsByTagName("div")[1].innerHTML = "Natalia"
+       
      }
      else{
          document.getElementsByTagName("div")[0].innerHTML="Сергеева"
