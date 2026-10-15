@@ -33,11 +33,18 @@
     <p><a href="info.html#down">Перейти вниз></a></p>
     <h3 id="picture">фотографии</h3>
     <ul type="I">
-        <li><a href="sea.jpg" target="_blank"><img src="images/sea.jpg" width="10" height="10" alt="sea"></a></li>
-        <li><a href="mountanes.jpg"><img src="images/mountanes.jpg" width="50" height="50" alt="mountanes"></li>
-        <li><a href="amsterdam.jpg"><img src="images/amsterdam.jpg" width="50" height="50" alt="amsterdam"></li>
+        <li><a href="images/sea.jpg" target="_blank"><img src="images/sea.jpg" width="10" height="10" alt="sea"></a></li>
+        <li><a href="images/mountanes.jpg" onclick="return zoom2(this.href);"><img src="images/mountanes.jpg" width="10" height="10" alt="mountanes"></a></li>
     </ul>
-    <p><a href="info.html#up">Перейти вверх></a></p>
-    
+    <p><a href="info.html#up">Перейти вверх</a></p>
+<script>
+function zoom2(src)
+{
+    var w = window.open("", "_blank");
+    w.document.write("<img src='" + src + "' style='width:200%'>");
+    w.document.close();
+    return false;
+}
+</script>    
 </body>
 </html>
