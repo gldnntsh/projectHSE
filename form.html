@@ -4,48 +4,47 @@
     <meta charset="UTF-8">
     <title>Заказ товаров</title>
 </head>
-<body style="padding: 20px; font-family: Arial, sans-serif;">
+<body>
 
-    <h1>Заказ товаров из эл.магазина</h1>
+    <h1>Заказ товаров из электронного магазина</h1>
 
-    <!-- Форма отправляет данные на сервер httpbin.org -->
-    <form action="https://httpbin.org/post" method="POST" style="width: 500px; padding: 20px; border: 1px solid #ccc; background: #fafafa;">
+    <!--отправляет данные на сервер httpbin.org -->
+    <form action="https://httpbin.org/post" method="POST">
         
-        <!-- text -->
-        <label>Ваше имя:</label><br>
-        <input type="text" name="customer_name" placeholder="Иван Иванов" required><br><br>
+        <p>Ваше имя:</p><br>
+        <input type="text" name="client_name" placeholder="Иван Иванов" required><br><br>
 
-        <!-- text (выбор товара) -->
-        <label>Какой товар заказываете?</label><br>
-        <input type="text" name="product_name" value="Смартфон" required><br><br>
+        <p>Куда хотите поехать?:</p>
+        <select name="destination">
+        <option value="Китай">Китай</option>
+        <option value="Мьянма">Мьянма</option>
+        <option value="США">США</option>
+        <option value="Беларусь">Беларусь</option>
+        </select><br><br>
+        
+        <p>Бюджет на человека:</p>
+        <input type="number" name="budget" value="50000" min="10000"><br><br>
 
-        <!-- number -->
-        <label>Количество (шт.):</label><br>
-        <input type="number" name="quantity" min="1" max="100" value="1" required><br><br>
+        <p>Дата вылета:</p>
+        <input type="date" name="departure_date"><br><br>
 
-        <!-- number -->
-        <label>Цена за 1 шт. (руб.):</label><br>
-        <input type="number" name="price" min="1" value="15000" required><br><br>
+        <p>Класс перелета:</p>
+        <input type="radio" name="class" value="Эконом" checked> Эконом<br>
+        <input type="radio" name="class" value="Бизнес"> Бизнес<br><br>
 
-        <!-- radio (выбор доставки) -->
-        <label>Способ доставки:</label><br>
-        <input type="radio" name="delivery" value="Курьер" checked> Курьер<br>
-        <input type="radio" name="delivery" value="Почта"> Почта<br>
-        <input type="radio" name="delivery" value="Самовывоз"> Самовывоз<br><br>
+        <p>Что важно в поездке?:</p>
+        <input type="checkbox" name="preferences" value="Пляж" checked> Пляж<br>
+        <input type="checkbox" name="preferences" value="Экскурсия"> Экскурсия<br>
+        <input type="checkbox" name="preferences" value="Шоппинг"> Шоппинг<br><br>
 
-        <!-- checkbox (доп. услуги) -->
-        <label>Дополнительно:</label><br>
-        <input type="checkbox" name="extras" value="Страховка" checked> Страховка<br>
-        <input type="checkbox" name="extras" value="Подарочная упаковка"> Подарочная упаковка<br><br>
+        <p>Электронная почта:</p>
+        <input type="email" name="email" placeholder="ivan@mail.ru" required><br>
 
-        <!-- hidden -->
-        <input type="hidden" name="order_id" value="ORDER-001">
-        <input type="hidden" name="shop" value="OnlineStore">
+        <input type="hidden" name="form_type" value="tour_selection">
 
-        <button type="submit" style="padding: 10px 20px; background: #0044aa; color: #fff; border: none; cursor: pointer;">
+        <button type="submit" style="padding: 10px 20px; background: tomato; color: black">
             Оформить заказ
         </button>
     </form>
-
 </body>
 </html>
