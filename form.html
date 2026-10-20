@@ -20,6 +20,9 @@
         <option value="США">США</option>
         <option value="Беларусь">Беларусь</option>
         </select><br><br>
+
+        <p>Количество человек:</p>
+        <input type="number" name="people_count" value="2" min="1" max="10"><br><br>
         
         <p>Бюджет на человека:</p>
         <input type="number" name="budget" value="50000" min="10000"><br><br>
@@ -36,11 +39,17 @@
         <input type="checkbox" name="preferences" value="Экскурсия"> Экскурсия<br>
         <input type="checkbox" name="preferences" value="Шоппинг"> Шоппинг<br><br>
 
+        <p>Особые пожелания:</p>
+        <textarea name="notes" rows="3" style="width: 300px;"></textarea><br><br>
+
         <p>Пароль от личного кабинета:</p>
         <input type="password" name="user_password" required><br>
 
         <p>Электронная почта:</p>
         <input type="email" name="email" placeholder="ivan@mail.ru" required><br>
+
+        <p>Мобильный телефон:</p>
+        <input type="tel" name="phone" placeholder="+7 (999) 123-45-67"><br><br>
 
         <input type="hidden" name="form_type" value="tour_selection"><br>
 
