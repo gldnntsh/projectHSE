@@ -2,16 +2,15 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Заказ товаров</title>
+    <title>Заказ путевки</title>
 </head>
 <body>
 
-    <h1>Заказ товаров из электронного магазина</h1>
+    <h1>Заказ путевки</h1>
 
-    <!--отправляет данные на сервер httpbin.org -->
     <form action="https://httpbin.org/post" method="POST">
         
-        <p>Ваше имя:</p><br>
+        <p>Ваше имя:</p>
         <input type="text" name="client_name" placeholder="Иван Иванов" required><br><br>
 
         <p>Куда хотите поехать?:</p>
@@ -36,6 +35,9 @@
         <input type="checkbox" name="preferences" value="Пляж" checked> Пляж<br>
         <input type="checkbox" name="preferences" value="Экскурсия"> Экскурсия<br>
         <input type="checkbox" name="preferences" value="Шоппинг"> Шоппинг<br><br>
+
+        <p>Пароль от личного кабинета:</p>
+        <input type="password" name="user_password" required><br>
 
         <p>Электронная почта:</p>
         <input type="email" name="email" placeholder="ivan@mail.ru" required><br>
