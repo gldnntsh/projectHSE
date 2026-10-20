@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказ товаров</title>
+</head>
+<body style="padding: 20px; font-family: Arial, sans-serif;">
+
+    <h1>Заказ товаров из эл.магазина</h1>
+
+    <!-- Форма отправляет данные на сервер httpbin.org -->
+    <form action="https://httpbin.org/post" method="POST" style="width: 500px; padding: 20px; border: 1px solid #ccc; background: #fafafa;">
+        
+        <!-- text -->
+        <label>Ваше имя:</label><br>
+        <input type="text" name="customer_name" placeholder="Иван Иванов" required><br><br>
+
+        <!-- text (выбор товара) -->
+        <label>Какой товар заказываете?</label><br>
+        <input type="text" name="product_name" value="Смартфон" required><br><br>
+
+        <!-- number -->
+        <label>Количество (шт.):</label><br>
+        <input type="number" name="quantity" min="1" max="100" value="1" required><br><br>
+
+        <!-- number -->
+        <label>Цена за 1 шт. (руб.):</label><br>
+        <input type="number" name="price" min="1" value="15000" required><br><br>
+
+        <!-- radio (выбор доставки) -->
+        <label>Способ доставки:</label><br>
+        <input type="radio" name="delivery" value="Курьер" checked> Курьер<br>
+        <input type="radio" name="delivery" value="Почта"> Почта<br>
+        <input type="radio" name="delivery" value="Самовывоз"> Самовывоз<br><br>
+
+        <!-- checkbox (доп. услуги) -->
+        <label>Дополнительно:</label><br>
+        <input type="checkbox" name="extras" value="Страховка" checked> Страховка<br>
+        <input type="checkbox" name="extras" value="Подарочная упаковка"> Подарочная упаковка<br><br>
+
+        <!-- hidden -->
+        <input type="hidden" name="order_id" value="ORDER-001">
+        <input type="hidden" name="shop" value="OnlineStore">
+
+        <button type="submit" style="padding: 10px 20px; background: #0044aa; color: #fff; border: none; cursor: pointer;">
+            Оформить заказ
+        </button>
+    </form>
+
+</body>
+</html>
