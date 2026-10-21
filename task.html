@@ -43,15 +43,13 @@ function verify() {
     console.log("Номер места:", place);
     let resultText = ""; 
     if (place >= 1 && place <= 36) {
-        let remainder = place % 4;  // Если остаток 1 или 2 - это нижние полки в купе, иначе верхние
-        if (remainder === 1 || remainder === 2) {
-            resultText = "Купе, нижнее";
-        } else {
-            resultText = "Купе, верхнее";
-        }
+       if (place % 2 !== 0) {
+                resultText = "Купе, нижнее";
+            } else {
+                resultText = "Купе, верхнее";
+            }
     } 
-    // 4. Если это боковое
-    else if (place >= 37 && place <= 54) { // Нечетные - нижние, четные - верхние
+    else if (place >= 37 && place <= 54) { 
         if (place % 2 !== 0) {
             resultText = "Боковое, нижнее";
         } else {
