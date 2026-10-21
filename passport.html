@@ -51,8 +51,8 @@
                     <td>
                         <div>Фамилия:<span> Сергеева</span></div><br>
                         <div>Имя:<span>Наталья</span></div><br>
-                        <p>Отчество:Валерьевна</p><br>
-                        <p>Пол: Жен</p> <br>
+                        <div>Отчество:<span>Валерьевна</span></div><br>
+                        <div>Пол: Жен</div> <br>
                         <div>Дата рождения: 01.01.<span>2006</span></div></td>
                </tr>
             </table>
@@ -66,14 +66,18 @@
    change.addEventListener("click", change_all)
 
    function change_all(){
-     if(document.getElementsByTagName("div")[0].innerHTML==="Сергеева") {
-         document.getElementsByTagName("div")[0].innerHTML = "Sergeeva"
-         document.getElementsByTagName("div")[1].innerHTML = "Natalia"
+     if(document.getElementsByTagName("span")[0].innerHTML==="Сергеева") {
+         document.getElementsByTagName("span")[0].innerHTML = "Sergeeva"
+         document.getElementsByTagName("span")[1].innerHTML = "Natalia"
+         document.getElementsByTagName("span")[2].innerHTML = "Valerievna"
+         document.getElementsByTagName("span")[3].innerHTML = "female"
        
      }
      else{
-         document.getElementsByTagName("div")[0].innerHTML="Сергеева"
-         document.getElementsByTagName("div")[1].innerHTML="Наталья"
+         document.getElementsByTagName("span")[0].innerHTML="Сергеева"
+         document.getElementsByTagName("span")[1].innerHTML="Наталья"
+         document.getElementsByTagName("span")[2].innerHTML = "Валерьевна"
+         document.getElementsByTagName("span")[3].innerHTML = "жен"
      }
    }
     </script>
