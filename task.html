@@ -5,12 +5,15 @@
     <title>pешение алгоритмической задачи</title>
 </head>
 <body>
-    <h1->алгоритмическая задача</h1>
+    <h1>алгоритмическая задача</h1>
     <p><b>Дано:</b> Номер места в плацкартном вагоне (от 1 до 54).<br>
     <b>Определить:</b> какое это место: верхнее или нижнее, в купе или боковое.</p>
+    
     <form action="https://postman-echo.com/post" method="POST">
+        
         <input type="hidden" name="task_text" value="Определить тип места в плацкартном вагоне">
         <p>Номер места: 
+            
             <!-- id="place_num" нужен для JS. name="place_number" нужен для отправки на сервер -->
             <input type="number" id="place_num" name="place_number" value="15" min="1" max="54" required>
         </p>
@@ -18,7 +21,7 @@
             <input type="text" id="result" name="task_result" value="не определен" readonly style="width: 300px;">
         </p>
         <p>действие 1: 
-            <button type="button" onclick="checkPlace()">Проверить</button>
+            <button type="button" id="verify">Проверить</button>
         </p>
         <p>действие 2: 
             <button type="submit">Отправить</button>
@@ -26,21 +29,19 @@
     </form>
 <script>
 function verify() {
-    let place = parseInt(document.getElementById('place').value);
+    let place = parseInt(document.getElementById('place_num').value);
     console.log("Номер места:", place);
     let resultText = ""; 
     if (place >= 1 && place <= 36) {
-        let remainder = place % 4;
-        // Если остаток 1 или 2 - это нижние полки в купе, иначе верхние
+        let remainder = place % 4;  // Если остаток 1 или 2 - это нижние полки в купе, иначе верхние
         if (remainder === 1 || remainder === 2) {
             resultText = "Купе, нижнее";
         } else {
             resultText = "Купе, верхнее";
         }
     } 
-    // 4. Если это БОКОВОЕ (37-54)
-    else if (place >= 37 && place <= 54) {
-        // Нечетные - нижние, четные - верхние
+    // 4. Если это боковое
+    else if (place >= 37 && place <= 54) { // Нечетные - нижние, четные - верхние
         if (place % 2 !== 0) {
             resultText = "Боковое, нижнее";
         } else {
