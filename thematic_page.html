@@ -5,12 +5,28 @@
     <title>тематическая страница</title>
     <style>
 
-       a:hover{
+    a:hover{
            color:red
        }
-         a.active {
+    a.active {
              background-color:pink
          }
+    .album {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    }
+   .album a img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    }
+   .album a img:hover {
+    border-color: red;
+    }
      </style> 
 
 </head>
@@ -84,20 +100,20 @@ function zoom2(src)
 </script> 
     <h3>альбом</h3>
     <div class="album">
-        <a href="images/photo1.jpg" target="_blank" rel="noopener">
-            <img src="images/photo1_small.jpg" alt="Фото 1">
+        <a href="images/cityphoto1.jpg" target="_blank">
+            <img src="images/cityphoto1.jpg" alt="Фото 1">
         </a>
-        <a href="images/photo2.jpg" target="_blank" rel="noopener">
-            <img src="images/photo2_small.jpg" alt="Фото 2">
+        <a href="images/cityphoto2.jpg" target="_blank">
+            <img src="images/cityphoto2.jpg" alt="Фото 2">
         </a>
-        <a href="images/photo3.jpg" target="_blank" rel="noopener">
-            <img src="images/photo3_small.jpg" alt="Фото 3">
+        <a href="images/cityphoto3.jpg" target="_blank">
+            <img src="images/cityphoto3.jpg" alt="Фото 3">
         </a>
-        <a href="images/photo4.jpg" target="_blank" rel="noopener">
-            <img src="images/photo4_small.jpg" alt="Фото 4">
+        <a href="images/cityphoto4.jpg" target="_blank">
+            <img src="images/cityphoto4.jpg" alt="Фото 4">
         </a>
-        <a href="images/photo5.jpg" target="_blank" rel="noopener">
-            <img src="images/photo5_small.jpg" alt="Фото 5">
+        <a href="images/cityphoto.jpg" target="_blank">
+            <img src="images/cityphoto.jpg" alt="Фото 5">
         </a>
     </div>
     <hr align="center" width="45%" style="height: 20px; background-color: black; border: none;">
