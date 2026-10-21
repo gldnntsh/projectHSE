@@ -53,7 +53,6 @@
 <script>
 function verify() {
     let place = parseInt(document.getElementById('place_num').value);
-    console.log("Номер места:", place);
     let resultText = ""; 
     if (place >= 1 && place <= 36) {
        if (place % 2 !== 0) {
@@ -70,7 +69,6 @@ function verify() {
         }
     }
     document.getElementById("result").value = resultText;
-    console.log("Результат:", resultText);
 }
 const elementVerify = document.getElementById("verify");
 elementVerify.addEventListener('click', verify);
