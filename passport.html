@@ -52,7 +52,7 @@
                         <div>Фамилия:<span> Сергеева</span></div><br>
                         <div>Имя:<span>Наталья</span></div><br>
                         <div>Отчество:<span>Валерьевна</span></div><br>
-                        <div>Пол: Жен</div> <br>
+                        <div>Пол:<span> Жен </span></div> <br>
                         <div>Дата рождения: 01.01.<span>2006</span></div></td>
                </tr>
             </table>
@@ -60,7 +60,7 @@
     </tr>
   </table>
   <h2 id="change_name" > изменение кириллицы на латиницу</h2>
-  <button class="button" id="change" style="text-align:center; background:tomato">на латиницу</button>
+  <button class="button" id="change" style="text-align:center; background:tomato">перевести</button>
  <script>
    const change = document.getElementById("change")
    change.addEventListener("click", change_all)
@@ -77,12 +77,9 @@
          document.getElementsByTagName("span")[0].innerHTML="Сергеева"
          document.getElementsByTagName("span")[1].innerHTML="Наталья"
          document.getElementsByTagName("span")[2].innerHTML = "Валерьевна"
-         document.getElementsByTagName("span")[3].innerHTML = "жен"
+         document.getElementsByTagName("span")[3].innerHTML = "Жен"
      }
    }
     </script>
- 
-
 </body>
-<script src = "./scripts/pass.js"> </script>
 </html>
