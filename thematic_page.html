@@ -5,9 +5,11 @@
     <title>тематическая страница</title>
 </head>
 <body>
-  <h1 style="text-align:center; color:blue">путешествия</h1>
-   <p> <a href="country">страны для путешествий </a></p>
-   <p><a href="transport">виды транспорта</a></p>
+  <h1 style="text-align:center; font-size: 32px; color:blue">путешествия</h1>
+    <p>Вода в океане — это H<sub>2</sub>O. Площадь суши измеряется в км<sup>2</sup>.</p>
+    <hr>
+    <p><a href="country">страны для путешествий </a></p>
+    <p><a href="transport">виды транспорта</a></p>
     <p><a href="picture">фотографии</a></p>
     <p><a href="info.html#down">Перейти вниз></a></p>
     <hr>
@@ -15,21 +17,32 @@
     <ul style="list-style-type:square;">
              <li>китай</li>
              <li>мьянма</li>
-             <li><i>сша</i></li>
+             <li><i>сша</i>
                  <ul style="list-style-type:circle";>
                     <li>нью-Йорк</li>
                     <li>вашингтон</li>
                  </ul>
+             </li>
              <li>беларусь</li>
     </ul>
     <p><a href="info.html#down">Перейти вниз></a></p>
-    <h3 id="transport">виды транспорта</h3>
-    <ul type='A' style="color:green">
-        <li><u>самолет</u></li>
-        <li>поезд</li>
-        <li>машина</li>
-        <li>корабль</li>
-    </ul>
+    <h3 id="transport">Виды транспорта</h3>
+    <ol type="I" style="color:green">
+    <li>Наземный транспорт
+        <ol type="1" start="3">
+            <li>Поезд</li>
+            <li>Машина</li>
+            <li>Автобус</li>
+        </ol>
+    </li>
+    <li>Воздушный транспорт
+        <ol type="1" start="3">
+            <li>Самолет</li>
+            <li>Вертолет</li>
+            <li>Дрон</li>
+        </ol>
+    </li>
+    </ol>
     <p><a href="info.html#down">Перейти вниз></a></p>
     <h3 id="picture">фотографии</h3>
     <ul type="I">
@@ -45,6 +58,7 @@ function zoom2(src)
     w.document.close();
     return false;
 }
-</script>    
+</script>  
+    <hr align="center" width="45%" style="height: 20px; background-color: black; border: none;">
 </body>
 </html>
