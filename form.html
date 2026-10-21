@@ -2,13 +2,25 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Заказ путевки</title>
+    <title>формы</title>
 </head>
 <body>
 
-    <h1>Заказ путевки</h1>
+    <h1>Формы</h1>
+    <h2>контактные данные</h2>
+    <form action="https://postman-echo.com/post"  method="POST" target="_blank">
 
-    <form action="https://postman-echo.com/post" method="POST">
+     <p> Введите ваше ФИО <input type="Text" name="fio"></p>
+     <p> Введите вашу группу <input type="Text" name="group"></p>
+     <p> Введите ваш возраст <input type="number" name="age" min="0" max="100"></p>
+     <p> Введите ваш номер телефона <input type="tel" name="Fnumber"></p>
+     <p> Введите вашу электронную почту <input type="Text" name="email"></p>
+     <p>Укажите дату отправки: <input name="user_date" type="date" value='2000-01-01'></p>
+     <p><input type="submit" value="Отправить">
+     <input type="reset" value="Очистить"></p>
+    </form>
+    <h2>заказ путевки</h2>
+    <form action="https://postman-echo.com/post" method="POST" target="_blank">
         
         <p>Ваше имя:</p>
         <input type="text" name="client_name" placeholder="Иван Иванов" required><br><br>
