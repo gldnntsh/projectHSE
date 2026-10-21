@@ -12,7 +12,7 @@
         <input type="hidden" name="task_text" value="Определить тип места в плацкартном вагоне">
         <p>Номер места: 
             <!-- id="place_num" нужен для JS. name="place_number" нужен для отправки на сервер -->
-            <input type="number" id="place_num" name="place_number" value="15" min="1" max="54">
+            <input type="number" id="place_num" name="place_number" value="15" min="1" max="54" required>
         </p>
         <p>Результат решения задачи: 
             <input type="text" id="result" name="task_result" value="не определен" readonly style="width: 300px;">
@@ -24,67 +24,34 @@
             <button type="submit">Отправить</button>
         </p>
     </form>
-
-    <!-- Скрипт для решения задачи -->
-    <script>
-        function checkPlace() {
-            // 1. Получаем число, которое ввел пользователь
-            var place = parseInt(document.getElementById('place_num').value);
-            var resultField = document.getElementById('result');
-            var answer = "";
-
-            // 2. Проверяем на ошибки (вдруг ввели 0 или 60)
-            if (isNaN(place) || place < 1 || place > 54) {
-                answer = "Ошибка: в плацкарте места от 1 до 54!";
-            } 
-            // 3. Если место в купе (от 1 до 36)
-            else if (place >= 1 && place <= 36) {
-                // Проверяем, верхнее или нижнее (каждые 4 места: 1-4 нижние, 5-8 верхние)
-                if (place % 4 === 1 || place % 4 === 2 || place % 4 === 3 || place % 4 === 0) {
-                    // Математика: места 1,2,3,4 — нижние. 5,6,7,8 — верхние.
-                    // Если остаток от деления на 4 равен 1, 2 или 3 — это нижние. 
-                    // Подожди, давай проще: 
-                    // 1(ост1), 2(ост2), 3(ост3), 4(ост0) - низ
-                    // 5(ост1), 6(ост2), 7(ост3), 8(ост0) - верх
-                    // На самом деле: 1,2,3,4 - низ; 5,6,7,8 - верх.
-                }
-                
-                // Упрощенная логика для купе:
-                var remainder = place % 4;
-                if (remainder === 1 || remainder === 2 || remainder === 3 || remainder === 0) {
-                    // В купе нечетные - нижние, четные - верхние (кроме 1-4, там всё нижнее)
-                    // На самом деле в купе: 1,2 - низ, 3,4 - верх (в одном купе).
-                    // Но если брать вагон целиком: 1,2,3,4 - низ. 5,6,7,8 - верх.
-                    // Значит 1-4 - нижние, 5-8 - верхние.
-                    if (place >= 1 && place <= 4) answer = "Купе, нижнее";
-                    else if (place >= 5 && place <= 8) answer = "Купе, верхнее";
-                    else {
-                        // Для остальных мест используем остаток от деления
-                        // 9(ост1) - низ, 10(ост2) - низ, 11(ост3) - верх, 12(ост0) - верх
-                        // Ой, тут сложнее. В купе 4 места: 2 нижних (нечет, чет) и 2 верхних.
-                        // Давай напишем точную формулу.
-                        // Если место 9, 13, 17... (остаток 1) - нижнее
-                        // Если 10, 14, 18... (остаток 2) - нижнее
-                        // Если 11, 15, 19... (остаток 3) - верхнее
-                        // Если 12, 16, 20... (остаток 0) - верхнее
-                        
-                        if (remainder === 1 || remainder === 2) answer = "Купе, нижнее";
-                        else answer = "Купе, верхнее";
-                    }
-                }
-            } 
-            // 4. Если место боковое (от 37 до 54)
-            else if (place >= 37 && place <= 54) {
-                // В боковых местах: нечетные (37, 39...) - нижние, четные (38, 40...) - верхние
-                if (place % 2 !== 0) {
-                    answer = "Боковое, нижнее";
-                } else {
-                    answer = "Боковое, верхнее";
-                }
-            }
-
-            // 5. Выводим результат на страницу
-            resultField.value = answer;
+<script>
+function verify() {
+    let place = parseInt(document.getElementById('place').value);
+    console.log("Номер места:", place);
+    let resultText = ""; 
+    if (place >= 1 && place <= 36) {
+        let remainder = place % 4;
+        // Если остаток 1 или 2 - это нижние полки в купе, иначе верхние
+        if (remainder === 1 || remainder === 2) {
+            resultText = "Купе, нижнее";
+        } else {
+            resultText = "Купе, верхнее";
+        }
+    } 
+    // 4. Если это БОКОВОЕ (37-54)
+    else if (place >= 37 && place <= 54) {
+        // Нечетные - нижние, четные - верхние
+        if (place % 2 !== 0) {
+            resultText = "Боковое, нижнее";
+        } else {
+            resultText = "Боковое, верхнее";
+        }
+    }
+    document.getElementById("result").value = resultText;
+    console.log("Результат:", resultText);
+}
+const elementVerify = document.getElementById("verify");
+elementVerify.addEventListener('click', verify);
         }
     </script>
 </body>
